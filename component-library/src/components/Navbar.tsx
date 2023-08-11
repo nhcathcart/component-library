@@ -2,10 +2,11 @@
 import { ReactElement, ReactNode, useState } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion"; // Import motion and AnimatePresence
 import styles from "./Navbar.module.css";
+import { useRouter } from "next/router";
 
 export default function Navbar({ children }: { children: React.ReactNode }) {
   const [viewSidebar, setViewSidebar] = useState(true);
-
+  
   return (
     <div className={styles.pageContainer}>
       <div className={styles.navbar}>
@@ -34,41 +35,25 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
           </button>
         </div>
       </div>
-      <motion.div
-        layout // Apply layout to animate
-        className={styles.sideBarAndContentContainer}
-        initial={{ opacity: 0 }} // Set initial opacity to 0
-        animate={{ opacity: 1 }} // Animate opacity to 1
-        exit={{ opacity: 0 }} // Set exit opacity to 0
-        transition={{ type: "spring", duration: 0.5, bounce: 0.15 }}
-      >
-        <AnimatePresence>
-          {viewSidebar && (
-            <motion.div
-              layout
-              className={styles.sidebar}
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ type: "spring", duration: 0.5, bounce: 0.15 }}
-            >
-              <NavButton
-                  title="navbars"
-                  onClick={() => {}}
-                  childButtons={[{ title: "A Navbar", onClick: () => {} }]}
-                />
-            </motion.div>
-          )}
-        </AnimatePresence>
-        
+      <div className={styles.sideBarAndContentContainer}>
         <motion.div
-          layout // Apply layout to animate
-          className={styles.contentContainer}
-          transition={{ type: "spring", duration: 0.5, bounce: 0.15 }}
+          className={styles.sidebar}
+          initial={{
+            width: viewSidebar ? "250px" : "0px",
+          }}
+          animate={{
+            width: viewSidebar ? "250px" : "0px",
+          }}
+          transition={{type: "linear", duration: 0.3}}
         >
-          {children}
+          <NavButton
+            title="navbars"
+            onClick={() => {}}
+            childButtons={[{ title: "A Navbar", onClick: () => {} }]}
+          />
         </motion.div>
-      </motion.div>
+        <div className={styles.contentContainer}>{children}</div>
+      </div>
     </div>
   );
 }
