@@ -3,8 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NHC-COMPONENTs",
-  description: "A place to build components",
+  title: "Schoolastic Qs",
+  description: "Questions",
 };
 
 export default function RootLayout({

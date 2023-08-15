@@ -2,16 +2,16 @@
 import { ReactElement, ReactNode, useState } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion"; // Import motion and AnimatePresence
 import styles from "./Navbar.module.css";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Navbar({ children }: { children: React.ReactNode }) {
   const [viewSidebar, setViewSidebar] = useState(true);
-  
+  const router = useRouter();
   return (
     <div className={styles.pageContainer}>
       <div className={styles.navbar}>
         <div className={styles.titleContainer}>
-          <h2 className={styles.titleContainerText}>Components</h2>
+          <h2 className={styles.titleContainerText}>Library</h2>
           <button
             className={styles.hamburgerMenuButton}
             onClick={() => {
@@ -47,9 +47,8 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
           transition={{type: "linear", duration: 0.3}}
         >
           <NavButton
-            title="navbars"
-            onClick={() => {}}
-            childButtons={[{ title: "A Navbar", onClick: () => {} }]}
+            title="accordion"
+            onClick={() => {router.push("/accordion")}}
           />
         </motion.div>
         <div className={styles.contentContainer}>{children}</div>
@@ -61,14 +60,14 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
 interface props {
   title: string;
   onClick: Function;
-  childButtons: { title: string; onClick: Function }[];
+  childButtons?: { title: string; onClick: Function }[];
 }
 
 function NavButton({ title, onClick, childButtons }: props) {
   const [showChildren, setShowChildren] = useState(false);
 
   if (!childButtons) {
-    return <button onClick={() => onClick()}>{title}</button>;
+    return <button className={styles.navButton} onClick={() => onClick()}>{title}</button>;
   }
 
   const childArray = childButtons.map((child) => {

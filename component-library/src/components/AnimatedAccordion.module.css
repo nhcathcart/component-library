@@ -1,0 +1,48 @@
+.accordionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: 1px #ccc solid;
+  border-radius: 10px;
+  padding: 2rem;
+}
+.accordionItemContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: inherit;
+  border: 1px #ccc solid;
+  border-radius: 5px;
+}
+.accordionButton {
+  display: flex;
+  width: 100%;
+  font: inherit;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: inherit;
+  border: none;
+  border-radius: 5px;
+}
+.accordionBody {
+  display: flex;
+  overflow: hidden;
+}
+.svg-button-icon {
+  width: 1rem;
+  height: 1rem;
+  display: inline;
+  vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+  /* Adjust the breakpoint as needed */
+  .accordionContainer{
+    width: 50%;
+  }
+  }
