@@ -50,6 +50,14 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             title="accordion"
             onClick={() => {router.push("/accordion")}}
           />
+          <NavButton
+            title="modal"
+            onClick={() => {router.push("/modal")}}
+          />
+          <NavButton
+            title="login-form"
+            onClick={() => {router.push("/login-form")}}
+          />
         </motion.div>
         <div className={styles.contentContainer}>{children}</div>
       </div>
