@@ -26,13 +26,11 @@
 .modalContent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 90%;
-  width: 90%;
-  padding: 0.5%;
+  padding: 2rem;
   border-radius: 10px;
   background-color: #ffffff;
   z-index: 10000;
@@ -40,7 +38,7 @@
 .modalCloseContainer {
   display: flex;
   justify-content: flex-end;
-  width: 90%;
+  width: 100%;
 }
 .closeButton {
   background-color: white;
