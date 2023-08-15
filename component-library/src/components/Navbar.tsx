@@ -1,6 +1,6 @@
 "use client";
-import { ReactElement, ReactNode, useState } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion"; // Import motion and AnimatePresence
+import { useState } from "react";
+import { motion } from "framer-motion"; 
 import styles from "./Navbar.module.css";
 import { useRouter } from "next/navigation";
 
