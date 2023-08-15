@@ -31,7 +31,9 @@
 }
 .accordionBody {
   display: flex;
+  flex-direction: column;
   overflow: hidden;
+  width: 100%;
 }
 .svg-button-icon {
   width: 1rem;

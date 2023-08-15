@@ -1,6 +1,6 @@
 "use client";
-import { ReactElement, ReactNode, useState } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion"; // Import motion and AnimatePresence
+import { useState } from "react";
+import { motion } from "framer-motion"; 
 import styles from "./Navbar.module.css";
 import { useRouter } from "next/navigation";
 
@@ -49,6 +49,14 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
           <NavButton
             title="accordion"
             onClick={() => {router.push("/accordion")}}
+          />
+          <NavButton
+            title="modal"
+            onClick={() => {router.push("/modal")}}
+          />
+          <NavButton
+            title="login-form"
+            onClick={() => {router.push("/login-form")}}
           />
         </motion.div>
         <div className={styles.contentContainer}>{children}</div>
