@@ -29,7 +29,14 @@ function AccordionItem({ title, body }: AccItem) {
 
   return (
     <div className={styles.accordionItemContainer}>
-      <button className={styles.accordionButton} onClick={() => handleClick()} style={{backgroundColor: expanded? "#f1787e" : "#fff"}}>
+      <button
+        className={styles.accordionButton}
+        onClick={() => handleClick()}
+        style={{
+          backgroundColor: expanded ? "#f1787e" : "#fff",
+          color: expanded ? "white" : "black",
+        }}
+      >
         <div>{title}</div>
         <div>
           <motion.svg
@@ -60,10 +67,8 @@ function AccordionItem({ title, body }: AccItem) {
         animate={{
           height: expanded ? "auto" : "0px",
         }}
-        transition={{ type: "linear", duration: 0.2 }}
+        transition={{ type: "linear"}}
       >
-        
-
         {body}
       </motion.div>
     </div>

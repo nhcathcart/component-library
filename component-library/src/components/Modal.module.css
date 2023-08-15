@@ -1,13 +1,17 @@
 .modalButton {
-  background-color: #5a7d7cff;
-  padding: 1%;
-  width: 10vw;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #f1787e;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 .modalButton:hover {
-  background-color: #5a7d7cff;
+  background-color: #ef3740;
 }
 .modalButton:active {
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
 .modalWrapper {
   position: fixed;
@@ -30,6 +34,8 @@
   align-items: center;
   overflow-y: scroll;
   overflow-x: hidden;
+  width: 90%;
+  height: 90%;
   padding: 2rem;
   border-radius: 10px;
   background-color: #ffffff;
