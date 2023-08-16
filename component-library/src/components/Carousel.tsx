@@ -90,13 +90,14 @@ export default function Carousel({ images }: Props) {
             <motion.img
               key={`carouselImage-${activeIndex}`}
               custom={direction}
+              variants={variants}
               src={currImage}
               alt={`Couldn't get the image`}
               className={styles.img}
               
-              initial={variants.enter(direction)}
-              animate={variants.center}
-              exit={variants.exit(direction)}
+              initial={"enter"}
+              animate={"center"}
+              exit={"exit"}
               
             />
           </AnimatePresence>
