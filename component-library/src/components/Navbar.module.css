@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: flex-start;
   align-items: center;
-  background-color: #f1787e;
+  background-color: #7387a0;
   overflow: hidden;
 }
 .navButton{
@@ -57,7 +57,7 @@
     border-radius: 10px;
 }
 .navButton:hover{
-  background-color: #ef3740
+  background-color: #56667a
 }
 .navButton:active{
   transform: scale(.95)
@@ -97,4 +97,5 @@
   <color name="English Violet" hex="5f4b66" r="95" g="75" b="102" />
   <color name="Cool gray" hex="8797af" r="135" g="151" b="175" />
   <color name="Payne's gray" hex="56667a" r="86" g="102" b="122" />
+   highlight #7387a0
 </palette> */

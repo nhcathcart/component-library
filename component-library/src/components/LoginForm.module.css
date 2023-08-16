@@ -29,13 +29,13 @@
     display: flex;
     justify-content: center;
     padding: .5rem;
-    background-color: #f1787e;
+    background-color: #7387a0;
     color: white;
     border: none;
     border-radius: 5px;
 }
 .submitButton:hover{
-    background-color: #ef3740;
+    background-color: #56667a;
 }
 .submitButton:active{
     transform: scale(.9);

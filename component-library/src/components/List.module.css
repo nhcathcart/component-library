@@ -47,12 +47,12 @@
   display: flex;
   padding: 0.5rem;
   color: white;
-  background-color: #f1787e;
+  background-color: #7387a0;
   border: none;
   border-radius: 5px;
 }
 .submitButton:hover {
-  background-color: #ef3740;
+  background-color: #56667a;
 }
 .submitButton:active {
   transform: scale(0.95);
@@ -64,3 +64,12 @@
     width: 400px;
   }
 }
+
+/* <palette>
+  <color name="Dark purple" hex="2c1320" r="44" g="19" b="32" />
+  <color name="English Violet" hex="5f4b66" r="95" g="75" b="102" />
+  <color name="Cool gray" hex="8797af" r="135" g="151" b="175" />
+  <color name="Payne's gray" hex="56667a" r="86" g="102" b="122" />
+    highligh #7387a0
+</palette> */
+
