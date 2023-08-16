@@ -66,6 +66,10 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             title="carousel"
             onClick={() => {router.push("/carousel")}}
           />
+          <NavButton
+            title="select"
+            onClick={() => {router.push("/select")}}
+          />
         </motion.div>
         <div className={styles.contentContainer}>{children}</div>
       </div>
