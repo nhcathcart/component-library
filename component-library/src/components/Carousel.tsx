@@ -8,44 +8,47 @@ import { useState, useReducer } from "react";
 interface Props {
   images: string[];
 }
+type NullableString = null | 'left' | 'right';
 export default function Carousel({ images }: Props) {
-  
-  const [direction, setDirection] = useState('left');
+  //   const [direction, setDirection] = useState('left');
 
   const [activeIndex, setActiveIndex] = useState(0);
-  
+  const [direction, setDirection] = useState<NullableString>("right")
+
   const currImage = images[activeIndex];
   const imagesLength = images.length;
-  const slideVariants = {
-    hiddenRight: {
-      x: "100%",
-      opacity: 0,
+  const atEnd = activeIndex === imagesLength-1
+  const atBeginning = activeIndex === 0;
+  const variants = {
+    enter: (direction: string | null) => {
+      return {
+        x: direction === "right" ? "100%" : "-100%",
+        opacity: 0,
+        transition: {duration: .5}
+      };
     },
-    hiddenLeft: {
-      x: "-100%",
-      opacity: 0,
-    },
-    visible: {
-      x: "0",
+    center: {
+      zIndex: 1,
+      x: 0,
       opacity: 1,
-      transition: {
-        duration: 1,
-      },
+      transition: {duration: 1}
     },
-    exit: {
-      opacity: 0,
-      
-      transition: {
-        duration: 1,
-      },
-    },
+    exit: (direction: string | null) => {
+      return {
+        x: direction === "right" ? "-100%" : "100%",
+        opacity: 0,
+        transition: {duration: .3}
+      };
+    }
   };
+  
 
   async function handleRightClick() {
     let newIndex = activeIndex + 1;
     if (newIndex >= imagesLength) return;
     setDirection("right");
     setActiveIndex(newIndex);
+    
     return;
   }
 
@@ -54,6 +57,7 @@ export default function Carousel({ images }: Props) {
     if (newIndex < 0) return;
     setDirection("left")
     setActiveIndex(newIndex);
+    
     return;
   }
   return (
@@ -69,7 +73,7 @@ export default function Carousel({ images }: Props) {
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
-              stroke="currentColor"
+              stroke={atBeginning? "#ccc" : "black"}
               height="2rem"
               width="2rem"
             >
@@ -81,20 +85,22 @@ export default function Carousel({ images }: Props) {
             </svg>
           </button>
         </div>
-        <AnimatePresence>
-          <motion.img
-            key={`carouselImage-${activeIndex}`}
-            src={currImage}
-            alt={`Couldn't get the image`}
-            className={styles.img}
-            variants={slideVariants}
-            initial={
-              direction === "right" ? slideVariants.hiddenRight : slideVariants.hiddenLeft
-            }
-            animate={slideVariants.visible}
-            exit={slideVariants.exit}
-          />
-        </AnimatePresence>
+        <div className={styles.imgContainer}>
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.img
+              key={`carouselImage-${activeIndex}`}
+              custom={direction}
+              src={currImage}
+              alt={`Couldn't get the image`}
+              className={styles.img}
+              
+              initial={variants.enter(direction)}
+              animate={variants.center}
+              exit={variants.exit(direction)}
+              
+            />
+          </AnimatePresence>
+        </div>
 
         <div className={styles.btnContainer}>
           <button
@@ -106,7 +112,7 @@ export default function Carousel({ images }: Props) {
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
-              stroke="currentColor"
+              stroke={atEnd? "#ccc" : "black"}
               height="2rem"
               width="2rem"
             >
