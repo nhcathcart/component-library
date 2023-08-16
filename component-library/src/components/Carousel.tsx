@@ -22,22 +22,24 @@ export default function Carousel({ images }: Props) {
   const variants = {
     enter: (direction: string | null) => {
       return {
-        x: direction === "right" ? "100%" : "-100%",
+        x: direction === "right" ? "50%" : "-50%",
         opacity: 0,
-        transition: {duration: .5}
+        transition: {duration: .4}
       };
     },
     center: {
       zIndex: 1,
       x: 0,
       opacity: 1,
+      scale: 1,
       transition: {duration: 1}
     },
     exit: (direction: string | null) => {
       return {
-        x: direction === "right" ? "-100%" : "100%",
+        x: direction === "right" ? "-50%" : "50%",
         opacity: 0,
-        transition: {duration: .3}
+        scale: .6,
+        transition: {duration: .4}
       };
     }
   };
