@@ -1,8 +1,8 @@
 "use client"
-
+import List from "../../components/List"
 export default function ListPage () {
     
     return (
-        <div>This is the list page</div>
+        <List/>
     )
 }
