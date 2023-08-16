@@ -83,7 +83,7 @@
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    background-color: white;
+    background-color: #f4f4f4;
     overflow-y: scroll;
     color: black;
 }
