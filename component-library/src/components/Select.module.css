@@ -1,0 +1,51 @@
+.selectContainer{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 200px;
+    overflow-y: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.selectContainer * {
+    background-color: white;
+    font-family: inherit;
+}
+
+.selectContairer  :-webkit-scrollbar{
+    display: none;
+}
+.choicesContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.choicesContainer :last-child{
+    margin-bottom: 1rem
+}
+.selectOption{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 1rem;
+    border-radius: 2px;
+    border: none;
+}
+.selectOption:hover{
+    background-color: #f1787e;
+    color: white;
+}
+.selectDisplay{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border: none;
+}
+.expandArrow{
+    margin: 3px;
+    margin-left: 20px;
+    margin-right: 1px;
+}

@@ -4,6 +4,7 @@ import styles from "./NewUserForm.module.css";
 import { motion, useAnimate } from "framer-motion";
 
 export default function NewUserForm() {
+  
   const [emailState, setEmailState] = useState("");
   const [passwordState, setPasswordState] = useState("");
   const [confirmState, setConfirmState] = useState("");
