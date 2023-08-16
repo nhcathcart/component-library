@@ -70,6 +70,10 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             title="select"
             onClick={() => {router.push("/select")}}
           />
+          <NavButton
+            title="list"
+            onClick={() => {router.push("/list")}}
+          />
         </motion.div>
         <div className={styles.contentContainer}>{children}</div>
       </div>
