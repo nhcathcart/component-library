@@ -6,7 +6,8 @@
   width: 90%;
   height: 90%;
   background-color: #56667a;
-  border: #ccc solid 1px;
+  /* border: #ccc solid 1px; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; /*as always, remove this and uncomment the line above if you don't like box-shadow*/
   border-radius: 10px;
 }
 .carouselInner {
@@ -19,7 +20,7 @@
   height: 95%;
   border: none;
   border-radius: 7px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .btnImgContainer {
   display: flex;
@@ -50,7 +51,10 @@
   border: none;
 }
 .carouselBtn:hover{
-  color: #f4f4f4;
+  transform: scale(1.2);
+}
+.carouselBtn:active{
+  transform: scale(1)
 }
 .imgContainer {
   display: flex;
