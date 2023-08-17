@@ -28,11 +28,10 @@ export default function Carousel({ images }: Props) {
       };
     },
     center: {
-      zIndex: 1,
       x: 0,
       opacity: 1,
       scale: 1,
-      transition: { duration: 1 },
+      transition: { duration: 0.4, type: "spring" },
     },
     exit: (direction: string | null) => {
       return {

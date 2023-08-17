@@ -76,21 +76,21 @@ const variants = {
       return {
         y: -40,
         opacity: 0,
-        transition: { duration: 0.4 },
+        transition: { duration: 0.2 },
       };
     },
     center: {
       y: 0,
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.4 },
+      transition: { duration: 0.2, type: "linear" },
     },
     exit: () => {
       return {
         y: -40,
         opacity: 0,
 
-        transition: { duration: 0.3 },
+        transition: { duration: 0.2 },
       };
     },
   };
