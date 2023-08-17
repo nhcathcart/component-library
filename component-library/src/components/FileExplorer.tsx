@@ -28,7 +28,7 @@ export function FileExplorer({ files, expanded }: Props) {
   return (
     <>
       <button
-        className={expand ?  styles.fileExpBtnExpanded : styles.fileExpBtn}
+        className={expand ? styles.fileExpBtnExpanded : styles.fileExpBtn}
         onClick={() => setExpand(!expand)}
       >
         <div className={styles.svgContainer}>
@@ -55,20 +55,32 @@ export function FileExplorer({ files, expanded }: Props) {
         </div>
         <div>{files.name}</div>
       </button>
-
-      <motion.div className={expand ? styles.childrenContainer : styles.hidden}>
-        {files.children?.map((child) => {
-          if (child.isDirectory) {
-            return <FileExplorer key={uuid()} files={child} expanded={false} />;
-          } else {
-            return (
-              <div key={uuid()} className={styles.file}>
-                {child.name}
-              </div>
-            );
-          }
-        })}
-      </motion.div>
+      <AnimatePresence>
+        <motion.div
+          className={styles.childrenContainer}
+          key={uuid()}
+          initial={{ height: 0 }}
+          animate={{
+            height: expand ? "auto" : 0,
+            transition: { when: "afterChildren", duration: .2 },
+          }}
+          exit={{ height: 0, transition: { duration: .2 } }}
+        >
+          {files.children?.map((child) => {
+            if (child.isDirectory) {
+              return (
+                <FileExplorer key={uuid()} files={child} expanded={false} />
+              );
+            } else {
+              return (
+                <div key={uuid()} className={styles.file}>
+                  {child.name}
+                </div>
+              );
+            }
+          })}
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }
