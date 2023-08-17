@@ -1,6 +1,76 @@
+.fileExplorerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .childrenContainer{
     display: flex;
     flex-direction: column;
-    margin-left: 5px;
-    overflow-y: hidden;
+    margin-left: 2rem;
+    width: 200px;
 }
+.hidden{
+    display: none;
+}
+.fileExpBtn {
+    display: flex;
+    width: 100%;
+    font: inherit;
+    font-size: 12px;
+    height: fit-content;
+    align-items: center;
+    background-color: inherit;
+    border: none;
+    color: black;
+    border-radius: 2px;
+}
+.fileExpBtnExpanded{
+    display: flex;
+    width: 100%;
+    font: inherit;
+    font-size: 12px;
+    height: fit-content;
+    align-items: center;
+    background-color: inherit;
+    border: none;
+    color: #f1787e;
+    border-radius: 2px;
+}
+.svgContainer{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.file{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+    height: 1.5rem
+}
+.file:hover{
+    font-size: 12px;
+    color: #f1787e
+}
+
+
+.fileExpBtn:hover{
+    color: #f1787e;
+}
+.svgContainer:hover{
+    stroke: #f1787e
+}
+@media (min-width: 768px) {
+    /* Adjust the breakpoint as needed */
+    .fileExplorerContainer{
+      width: 30%;
+      padding: 1rem;
+    }
+  }
+
+
