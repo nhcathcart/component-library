@@ -74,6 +74,10 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             title="list"
             onClick={() => {router.push("/list")}}
           />
+          <NavButton
+            title="file explorer"
+            onClick={() => {router.push("/file-explorer")}}
+          />
         </motion.div>
         <div className={styles.contentContainer}>{children}</div>
       </div>
