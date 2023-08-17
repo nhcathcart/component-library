@@ -75,8 +75,6 @@ export default function Carousel({ images }: Props) {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke={atBeginning ? "currColor" : "#f4f4f4"}
-                height="2rem"
-                width="2rem"
               >
                 <path
                   strokeLinecap="round"
