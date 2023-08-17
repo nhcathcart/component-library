@@ -62,9 +62,9 @@ export function FileExplorer({ files, expanded }: Props) {
           initial={{ height: 0 }}
           animate={{
             height: expand ? "auto" : 0,
-            transition: { when: "afterChildren", duration: .2 },
+            transition: { when: "afterChildren", duration: .3 },
           }}
-          exit={{ height: 0, transition: { duration: .2 } }}
+          exit={{ height: 0, transition: { duration: .3 } }}
         >
           {files.children?.map((child) => {
             if (child.isDirectory) {
