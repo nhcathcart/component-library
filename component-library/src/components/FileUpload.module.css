@@ -15,11 +15,38 @@
 .fileUploadContainer :first-child{
     margin-top: 0;
 }
-#dropZone{
+.customFileInput{
+  display: flex;
+  justify-content: center;
+  padding: .5rem;
+  background-color: #7387a0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.customFileInput:hover{
+  background-color: #56667a;
+}
+.customFileInput:active{
+  transform: scale(.9);
+}
+.fileListContainer{
+  width: 100%;
+  padding: .5rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.fileListContainer ul {
+  margin: 0;
+  padding-left: 1rem; /* Add a left padding for better spacing between bullet and content */
+}
+.dropZone{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100px;
+    align-items: center;
+    width: 200px;
     height: 100px;
     border-radius: 10px;
     padding: 0.5rem;
