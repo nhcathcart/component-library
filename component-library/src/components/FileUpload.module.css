@@ -41,6 +41,17 @@
   margin: 0;
   padding-left: 1rem; /* Add a left padding for better spacing between bullet and content */
 }
+.fileListItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid #e6e5e5;
+  margin-top: 0.2rem;
+  border-radius: 5px;
+  padding: 0.2rem;
+}
 .dropZone{
     display: flex;
     flex-direction: column;
@@ -52,6 +63,28 @@
     padding: 0.5rem;
     background-color: white;
     border: dotted #ccc 1px
+}
+.closeButton {
+  display: flex;
+  background-color: white;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+.closeButtonIcon {
+  width: 2rem;
+  height: 2rem;
+  display: inline;
+  vertical-align: middle;
+  stroke: #ccc;
+}
+.closeButtonIcon:hover{
+  stroke: #818181
+}
+.closeButtonIcon:active{
+  scale: .9
 }
 @media (min-width: 768px) {
   /* Adjust the breakpoint as needed */
