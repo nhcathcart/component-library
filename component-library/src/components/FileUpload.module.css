@@ -1,0 +1,62 @@
+.fileUploadContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 0.5rem;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.fileUploadContainer * {
+    margin-top: 1rem;
+}
+.fileUploadContainer :first-child{
+    margin-top: 0;
+}
+.customFileInput{
+  display: flex;
+  justify-content: center;
+  padding: .5rem;
+  background-color: #7387a0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.customFileInput:hover{
+  background-color: #56667a;
+}
+.customFileInput:active{
+  transform: scale(.9);
+}
+.fileListContainer{
+  width: 100%;
+  padding: .5rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.fileListContainer ul {
+  margin: 0;
+  padding-left: 1rem; /* Add a left padding for better spacing between bullet and content */
+}
+.dropZone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    padding: 0.5rem;
+    background-color: white;
+    border: dotted #ccc 1px
+}
+@media (min-width: 768px) {
+  /* Adjust the breakpoint as needed */
+  .fileUploadContainer {
+    width: 50%;
+    padding: 1rem;
+  }
+}
