@@ -57,7 +57,7 @@ export default function FileUpload() {
         className={styles.customFileInput}
         layout
       >
-        Choose file
+        Choose files
       </motion.label>
       <input
         type="file"
