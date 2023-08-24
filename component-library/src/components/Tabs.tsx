@@ -28,7 +28,7 @@ export default function Tabs({ content }: Props) {
               }
               onClick={() => chooseTab(index)}
               style={{
-                width: `${tabSize}`
+                width: `${tabSize}%`
               }}
             >
               {item.title}
