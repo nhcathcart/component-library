@@ -19,13 +19,13 @@ export default function Tabs ({content}: Props) {
             <div className={styles.tabTopsContainer}>
                 {content.map((item, index) => {
                     return (
-                        <div key={index} className={index === activeIndex? styles.tabTopActive : styles.tabTop} onClick={() => chooseTab(index)}>{item.title}</div>
+                        <div key={`tab-${index}`} className={index === activeIndex? styles.tabTopActive : styles.tabTop} onClick={() => chooseTab(index)}>{item.title}</div>
                     )
                 })}
                 
             </div>
             <div className={styles.tabsContentContainer}>
-
+                {content[activeIndex].content}
             </div>
             
         </div>
