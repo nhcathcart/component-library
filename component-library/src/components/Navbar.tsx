@@ -111,6 +111,26 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             ]}
           />
           <NavButton
+            title="accordions"
+            onClick={()=> {}}
+            childButtons={[
+              {
+                title: "any number open",
+                onClick: () => {
+                  router.push("/accordion-any");
+                  handleClick();
+                },
+              },
+              {
+                title: "only one open",
+                onClick: () => {
+                  router.push("/accordion-one");
+                  handleClick();
+                },
+              }
+            ]}
+          />
+          <NavButton
             title="accordion"
             onClick={() => {
               router.push("/accordion");

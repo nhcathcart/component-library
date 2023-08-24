@@ -1,5 +1,5 @@
-import Accordion from "@/components/AnimatedAccordion";
-import Navbar from "../../components/Navbar"
+import AccordionAny from "@/components/AccordionAny";
+
 
 export default function AccordionPage({
     children,
@@ -34,7 +34,7 @@ export default function AccordionPage({
     ]
     return (
       <>
-      <Accordion items={exampleItemArr}/>
+      <AccordionAny items={exampleItemArr}/>
       </>
     )
   }
