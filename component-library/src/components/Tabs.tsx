@@ -17,10 +17,15 @@ export default function Tabs ({content}: Props) {
     return (
         <div className={styles.tabsContainer}>
             <div className={styles.tabTopsContainer}>
-                <div className={styles.tabTop}> HI</div>
+                {content.map((item, index) => {
+                    return (
+                        <div key={index} className={index === activeIndex? styles.tabTopActive : styles.tabTop} onClick={() => chooseTab(index)}>{item.title}</div>
+                    )
+                })}
+                
             </div>
-            <div className={styles.tabTopsContainer}>
-                <div className={styles.tabTop}> Hello There</div>
+            <div className={styles.tabsContentContainer}>
+
             </div>
             
         </div>
