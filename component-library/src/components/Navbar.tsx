@@ -71,6 +71,26 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
           transition={{ type: "linear", duration: 0.3 }}
         >
           <NavButton
+            title="tabs"
+            onClick={() => {}}
+            childButtons={[
+              {
+                title: "paper-tabs",
+                onClick: () => {
+                  router.push("/paper-tabs");
+                  handleClick();
+                },
+              },
+              {
+                title: "slider-tabs",
+                onClick: () => {
+                  router.push("/slider-tabs");
+                  handleClick();
+                },
+              },
+            ]}
+          />
+          <NavButton
             title="accordion"
             onClick={() => {
               router.push("/accordion");
@@ -140,29 +160,9 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
               handleClick();
             }}
           />
-          <NavButton
-            title="tabs"
-            onClick={() => {}}
-            childButtons={[
-              {
-                title: "paper-tabs",
-                onClick: () => {
-                  router.push("/paper-tabs");
-                  handleClick();
-                },
-              },
-              {
-                title: "slider-tabs",
-                onClick: () => {
-                  router.push("/slider-tabs");
-                  handleClick();
-                },
-              },
-            ]}
-          />
           
         </motion.div>
-        <div className={styles.contentContainer}>{children}</div>
+        <motion.div className={styles.contentContainer}>{children}</motion.div>
       </div>
     </div>
   );
@@ -208,20 +208,19 @@ function NavButton({ title, onClick, childButtons }: props) {
       >
         {title}
       </button>
-      
-        <motion.div
-          className={styles.childButtonContainer}
-          initial={{
-            height: showChildren ? "auto" : "0px",
-          }}
-          animate={{
-            height: showChildren ? "auto" : "0px",
-          }}
-          transition={{ type: "linear", duration: 0.3 }}
-        >
-          {childArray}
-        </motion.div>
-      
+
+      <motion.div
+        className={styles.childButtonContainer}
+        initial={{
+          height: showChildren ? "auto" : "0px",
+        }}
+        animate={{
+          height: showChildren ? "auto" : "0px",
+        }}
+        transition={{ type: "linear", duration: 0.3 }}
+      >
+        {childArray}
+      </motion.div>
     </>
   );
 }
