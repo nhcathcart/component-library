@@ -42,7 +42,7 @@
   align-items: center;
   background-color: #7387a0;
   overflow-y: scroll;
-  flex: 0 0 auto;
+  flex: 1 0 auto;
 }
 .navButton {
   display: flex;
@@ -70,6 +70,7 @@
   flex-direction: column;
   width: 95%;
   margin-left: 5rem;
+  flex-shrink: 0;
   overflow: hidden;
 }
 .childButton {

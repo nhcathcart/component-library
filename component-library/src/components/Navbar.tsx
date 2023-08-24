@@ -212,10 +212,10 @@ function NavButton({ title, onClick, childButtons }: props) {
       <motion.div
         className={styles.childButtonContainer}
         initial={{
-          height: showChildren ? "auto" : "0px",
+          height: showChildren ? "fit-content" : "0px",
         }}
         animate={{
-          height: showChildren ? "auto" : "0px",
+          height: showChildren ? "fit-content" : "0px",
         }}
         transition={{ type: "linear", duration: 0.3 }}
       >
