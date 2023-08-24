@@ -30,7 +30,7 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
 
   function handleClick () {
     if (sidebarWidth === "250px") return;
-    setViewSidebar(false)
+    setTimeout(() => setViewSidebar(false), 300)
   }
   return (
     <div className={styles.pageContainer}>
@@ -138,6 +138,13 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             title="file-upload"
             onClick={() => {
               router.push("/file-upload");
+              handleClick()
+            }}
+          />
+          <NavButton
+            title="tabs"
+            onClick={() => {
+              router.push("/tabs");
               handleClick()
             }}
           />

@@ -1,0 +1,20 @@
+.tabsContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.tabTopsContainer{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+}
+.tabTop{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: 1rem;
+    align-items: center;
+}
