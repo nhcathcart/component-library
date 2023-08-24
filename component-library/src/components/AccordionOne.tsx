@@ -1,7 +1,7 @@
 "use client";
 import { ReactNode, useState } from "react";
 import { motion } from "framer-motion";
-import styles from "./AnimatedAccordion.module.css";
+import styles from "./AccordionOne.module.css";
 
 export interface Props {
   items: AccItem[];
@@ -9,29 +9,39 @@ export interface Props {
 export interface AccItem {
   title: string;
   body: ReactNode;
+  index: number;
+  expanded: boolean;
+  expandFunc: Function;
 }
-export default function Accordion({ items }: Props) {
+export default function AccordionOne({ items }: Props) {
+  const [activeIndex, setActiveIndex] = useState(-1);
+  function expandFunc (index: number) {
+    if (index === activeIndex) return setActiveIndex(-1)
+    return setActiveIndex(index)
+  }
   const itemList = items.map((item, index) => {
     return (
       <AccordionItem
         title={item.title}
         body={item.body}
         key={`${item.title}-${index}`}
+        index={index}
+        expanded={index === activeIndex}
+        expandFunc = {expandFunc}
       />
     ); //Use whatever you like for the key value.
   });
   return <div className={styles.accordionContainer}>{itemList}</div>;
 }
 
-function AccordionItem({ title, body }: AccItem) {
-  const [expanded, setExpanded] = useState(false);
-  const handleClick = () => setExpanded(!expanded);
+function AccordionItem({ title, body, index, expanded, expandFunc }: AccItem) {
+  
 
   return (
     <div className={styles.accordionItemContainer}>
       <button
         className={styles.accordionButton}
-        onClick={() => handleClick()}
+        onClick={() => expandFunc(index)}
         style={{
           backgroundColor: expanded ? "#f1787e" : "#fff",
           color: expanded ? "white" : "black",
