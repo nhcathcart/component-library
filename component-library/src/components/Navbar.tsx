@@ -147,19 +147,20 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
               {
                 title: "paper-tabs",
                 onClick: () => {
-                  router.push("/tabs");
+                  router.push("/paper-tabs");
+                  handleClick();
+                },
+              },
+              {
+                title: "slider-tabs",
+                onClick: () => {
+                  router.push("/slider-tabs");
                   handleClick();
                 },
               },
             ]}
           />
-          <NavButton
-            title="tabs"
-            onClick={() => {
-              router.push("/tabs");
-              handleClick();
-            }}
-          />
+          
         </motion.div>
         <div className={styles.contentContainer}>{children}</div>
       </div>
