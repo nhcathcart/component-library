@@ -131,13 +131,6 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             ]}
           />
           <NavButton
-            title="accordion"
-            onClick={() => {
-              router.push("/accordion");
-              handleClick();
-            }}
-          />
-          <NavButton
             title="modal"
             onClick={() => {
               router.push("/modal");
