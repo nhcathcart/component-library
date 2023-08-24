@@ -1,2 +1,2 @@
 # component-library
-A place to build new components
+A library of animated, responsive react components. 
