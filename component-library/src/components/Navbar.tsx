@@ -141,6 +141,13 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
               handleClick()
             }}
           />
+          <NavButton
+            title="tabs"
+            onClick={() => {
+              router.push("/tabs");
+              handleClick()
+            }}
+          />
         </motion.div>
         <div className={styles.contentContainer}>{children}</div>
       </div>
