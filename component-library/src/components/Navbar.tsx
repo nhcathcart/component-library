@@ -91,6 +91,26 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             ]}
           />
           <NavButton
+            title="cards"
+            onClick={()=> {}}
+            childButtons={[
+              {
+                title: "vertical-card",
+                onClick: () => {
+                  router.push("/vertical-card");
+                  handleClick();
+                },
+              },
+              {
+                title: "horizontal-card",
+                onClick: () => {
+                  router.push("/horizontal-card");
+                  handleClick();
+                },
+              }
+            ]}
+          />
+          <NavButton
             title="accordion"
             onClick={() => {
               router.push("/accordion");
@@ -143,13 +163,6 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             title="file explorer"
             onClick={() => {
               router.push("/file-explorer");
-              handleClick();
-            }}
-          />
-          <NavButton
-            title="cards"
-            onClick={() => {
-              router.push("/cards");
               handleClick();
             }}
           />
