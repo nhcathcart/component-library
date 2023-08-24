@@ -1,12 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./SmallCard.module.css";
+"use client"
+import styles from "./VerticalCard.module.css";
 
 interface Props {
   image: string;
   title: string;
   description: string;
 }
-export default function SmallCard({ image, title, description }: Props) {
+export default function VerticalCard({ image, title, description }: Props) {
+  function handleClick(){
+    //put your logic here to handle button click
+  }
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardImageContainer}>
@@ -17,7 +21,7 @@ export default function SmallCard({ image, title, description }: Props) {
         <h2 className={styles.cardTitle}>{title}</h2>
         <p>{description}</p>
         <div className={styles.cardButtonContainer}>
-          <button className={styles.cardButton}>Buy</button>
+          <button className={styles.addButton} onClick={() => handleClick()}>Buy</button>
         </div>
       </div>
     </div>

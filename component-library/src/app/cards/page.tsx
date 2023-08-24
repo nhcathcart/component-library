@@ -1,9 +1,32 @@
-import SmallCard from "../../components/SmallCard"
+import VerticalCard from "../../components/VerticalCard"
 export default function CardsPage () {
-    const title =`Cardigan`;
-    const image = `data:image/jpeg;base64,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`;
-    const description = `For those who appreciate cozy boy fall.`
+    const fakeProducts = [
+        {
+            title: `Nikes`,
+            image: `/images/StockImages/jay-nuetey-EIYUYEu68Uk-unsplash.jpg`,
+            description: `For the sneaker heads out there`
+        },
+        {
+            title: `Jeans & Sunnies`,
+            image: `/images/StockImages/ankita-bhattacharya-8jknGKPENCY-unsplash.jpg`,
+            description: `Sunshine and denim FTW`
+        },
+        {
+            title: `More Nikes`,
+            image: `/images/StockImages/jay-nuetey-uOufXd_8boE-unsplash.jpg`,
+            description: `For the sneaker heads out there`
+        },
+        {
+            title: `Coat`,
+            image: `images/StockImages/tamara-schipchinskaya-YDxW47w8ANg-unsplash.jpg`,
+            description: `Stay cozy my friends`
+        },
+
+    ]
+        
     return (
-        <SmallCard title={title} image={image} description={description}/>
+        <div style={{width: "100%", display:"flex", alignItems:"center", flexWrap: "wrap", justifyContent: "space-around", rowGap: "1rem"}}>
+        {fakeProducts.map((item) => <VerticalCard key={item.title} title={item.title} image={item.image} description={item.description}/>)}
+        </div>
     )
 }
