@@ -41,7 +41,7 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #7387a0;
-  overflow: hidden;
+  overflow-y: scroll;
   flex: 0 0 auto;
 }
 .navButton {
@@ -66,8 +66,11 @@
 .childButtonContainer {
   display: flex;
   justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
   width: 95%;
   margin-left: 5rem;
+  overflow: hidden;
 }
 .childButton {
   display: flex;
