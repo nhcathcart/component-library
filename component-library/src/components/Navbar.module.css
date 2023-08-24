@@ -25,14 +25,14 @@
 .titleContainerText {
   font-size: 1.75rem;
 }
-.hamburgerMenuButton{
-    background-color: inherit;
-    color: inherit;
-    border: none;
-    color: #e4dbd8;
-    height: 24px;
-    width: 24px;
-  }
+.hamburgerMenuButton {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  color: #e4dbd8;
+  height: 24px;
+  width: 24px;
+}
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -44,57 +44,71 @@
   overflow: hidden;
   flex: 0 0 auto;
 }
-.navButton{
-    display: flex;
-    justify-content: flex-start;
-    width: 95%;
-    border: none;
-    background-color: inherit;
-    color: inherit;
-    padding: 1rem;
-    font-size: inherit;
-    font-family: inherit;
-    margin: .2rem;
-    border-radius: 10px;
+.navButton {
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  padding: 1rem;
+  font-size: inherit;
+  font-family: inherit;
+  margin: 0.2rem;
+  border-radius: 10px;
 }
-.navButton:hover{
-  background-color: #56667a
+.navButton:hover {
+  background-color: #56667a;
 }
-.navButton:active{
-  transform: scale(.95)
+.navButton:active {
+  transform: scale(0.95);
 }
-.childButtonContainer{
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 10px;
+.childButtonContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+  margin-left: 5rem;
 }
-.hidden{
-    display: none;
+.childButton {
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  padding: .5rem;
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 10px;
 }
-.sideBarAndContentContainer{
-    width: 100%;
-    height: 90%;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: row;
+.childButton:hover{
+  background-color: #56667a;
 }
-.contentContainer{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    background-color: #f4f4f4;
-    overflow-y: scroll;
-    color: black;
-    flex: 1 1 auto;
-    
+.hidden {
+  display: none;
+}
+.sideBarAndContentContainer {
+  width: 100%;
+  height: 90%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.contentContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  overflow-y: scroll;
+  color: black;
+  flex: 1 1 auto;
 }
 @media (min-width: 768px) {
-    /* Adjust the breakpoint as needed */
-   
-    }
+  /* Adjust the breakpoint as needed */
+}
 
 /* <palette>
   <color name="Dark purple" hex="2c1320" r="44" g="19" b="32" />

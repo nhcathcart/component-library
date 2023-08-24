@@ -10,7 +10,6 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   useEffect(() => {
-
     function handleResize() {
       const windowSize = window.innerWidth;
       if (windowSize > 764) {
@@ -28,9 +27,9 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  function handleClick () {
+  function handleClick() {
     if (sidebarWidth === "250px") return;
-    setTimeout(() => setViewSidebar(false), 300)
+    setTimeout(() => setViewSidebar(false), 300);
   }
   return (
     <div className={styles.pageContainer}>
@@ -75,77 +74,90 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
             title="accordion"
             onClick={() => {
               router.push("/accordion");
-              handleClick()
+              handleClick();
             }}
           />
           <NavButton
             title="modal"
             onClick={() => {
               router.push("/modal");
-              handleClick()
+              handleClick();
             }}
           />
           <NavButton
             title="login-form"
             onClick={() => {
               router.push("/login-form");
-              handleClick()
+              handleClick();
             }}
           />
           <NavButton
             title="new-user-form"
             onClick={() => {
               router.push("/new-user-form");
-              handleClick()
+              handleClick();
             }}
           />
           <NavButton
             title="carousel"
             onClick={() => {
               router.push("/carousel");
-              handleClick()
+              handleClick();
             }}
           />
           <NavButton
             title="select"
             onClick={() => {
               router.push("/select");
-              handleClick()
+              handleClick();
             }}
           />
           <NavButton
             title="list"
             onClick={() => {
               router.push("/list");
-              handleClick()
+              handleClick();
             }}
           />
           <NavButton
             title="file explorer"
             onClick={() => {
               router.push("/file-explorer");
-              handleClick()
+              handleClick();
             }}
           />
           <NavButton
             title="cards"
             onClick={() => {
               router.push("/cards");
-              handleClick()
+              handleClick();
             }}
           />
           <NavButton
             title="file-upload"
             onClick={() => {
               router.push("/file-upload");
-              handleClick()
+              handleClick();
             }}
+          />
+          <NavButton
+            title="tabs"
+            onClick={() => {}}
+            childButtons={[
+              {
+                title: "paper-tabs",
+                onClick: () => {
+                  router.push("/tabs");
+                  handleClick();
+                },
+              },
+            ]}
           />
           <NavButton
             title="tabs"
             onClick={() => {
               router.push("/tabs");
-              handleClick()
+              handleClick();
             }}
           />
         </motion.div>
@@ -177,7 +189,7 @@ function NavButton({ title, onClick, childButtons }: props) {
       <button
         key={child.title}
         onClick={() => child.onClick()}
-        className={styles.navButton}
+        className={styles.childButton}
       >
         {child.title}
       </button>
@@ -195,9 +207,20 @@ function NavButton({ title, onClick, childButtons }: props) {
       >
         {title}
       </button>
-      {showChildren ? (
-        <div className={styles.childButtonContainer}>{childArray}</div>
-      ) : null}
+      
+        <motion.div
+          className={styles.childButtonContainer}
+          initial={{
+            height: showChildren ? "auto" : "0px",
+          }}
+          animate={{
+            height: showChildren ? "auto" : "0px",
+          }}
+          transition={{ type: "linear", duration: 0.3 }}
+        >
+          {childArray}
+        </motion.div>
+      
     </>
   );
 }
