@@ -2,6 +2,7 @@ import AccordionAny from "@/components/AccordionAny";
 import AccordionOne from "@/components/AccordionOne";
 import HorizontalCard from "@/components/HorizontalCard";
 import ModalButton from "@/components/ModalButton";
+import NewUserForm from "@/components/NewUserForm";
 import SliderTabs from "@/components/SliderTabs";
 import Tabs from "@/components/Tabs";
 import VerticalCard from "@/components/VerticalCard";
@@ -795,8 +796,8 @@ export const examples = {
   },
   modal: {
     title: "Modal",
-    description: `This is a modal that will appear on top of the page when the modal button is clicked. Wrap whatever you want displayed with the modal button component. In this example we wrapped our slider tabs component in our modal button.`,
-    example: <ModalButton isDefault={true} text={"click me"}><SliderTabs content={tabsContent}/></ModalButton>,
+    description: `This is a modal that will appear on top of the page when the modal button is clicked. Wrap whatever you want displayed with the modal button component. In this example we wrapped our new user card component in our modal button.`,
+    example: <ModalButton isDefault={true} text={"click me"}><div style={{display: "flex", flexGrow: 1, justifyContent: "center", alignItems: "center"}}><NewUserForm/></div></ModalButton>,
     TSX: `
     "use client"
     import { ReactElement, ReactNode, useState } from "react";
