@@ -1,3 +1,4 @@
+"use client"
 import { ReactElement, ReactNode, useState } from "react";
 import styles from "./Modal.module.css";
 import React from "react";

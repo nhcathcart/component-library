@@ -1,6 +1,7 @@
 import AccordionAny from "@/components/AccordionAny";
 import AccordionOne from "@/components/AccordionOne";
 import HorizontalCard from "@/components/HorizontalCard";
+import ModalButton from "@/components/ModalButton";
 import SliderTabs from "@/components/SliderTabs";
 import Tabs from "@/components/Tabs";
 import VerticalCard from "@/components/VerticalCard";
@@ -788,6 +789,173 @@ export const examples = {
     @media (min-width: 768px) {
       .cardContainer {
         width: 343px;
+      }
+    }
+    `,
+  },
+  modal: {
+    title: "Modal",
+    description: `This is a modal that will appear on top of the page when the modal button is clicked. Wrap whatever you want displayed with the modal button component. In this example we wrapped our slider tabs component in our modal button.`,
+    example: <ModalButton isDefault={true} text={"click me"}><SliderTabs content={tabsContent}/></ModalButton>,
+    TSX: `
+    "use client"
+    import { ReactElement, ReactNode, useState } from "react";
+    import styles from "./Modal.module.css";
+    import React from "react";
+    import { AnimatePresence, motion } from "framer-motion";
+    
+    export default function ModalButton(props: {
+      children: ReactElement;
+      isDefault: boolean;
+      text: string;
+      cssClass?: string;
+    }) {
+      const [showModal, setShowModal] = useState(false);
+      const { isDefault, cssClass, text } = props;
+    
+      return (
+        <>
+          <button
+            className={isDefault ? styles.modalButton : cssClass}
+            onClick={() => setShowModal(true)}
+          >
+            {text}
+          </button>
+          <Modal isVisible={showModal} onClose={() => setShowModal(false)}>
+            {props.children}
+          </Modal>
+        </>
+      );
+    }
+    
+    interface props {
+      isVisible: boolean;
+      onClose: Function;
+      children: ReactElement;
+    }
+    
+    export function Modal({ isVisible, onClose, children }: props) {
+      
+      function handleClose(e: any) {
+        if (e.target.id === "modal-wrapper") {
+          onClose();
+        }
+      }
+    
+      const childWithProps = React.cloneElement(children, { onClose: onClose });
+    
+      return (
+        <AnimatePresence>
+          {isVisible && (
+            <motion.div
+            className={styles.modalWrapper}
+            id={styles.modalWrapper}
+            onClick={(e) => handleClose(e)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{duration: .2}}
+          >
+            <motion.div
+              className={styles.modalContent}
+            >
+              <div className={styles.modalCloseContainer}>
+                <button
+                  className={styles.closeButton}
+                  onClick={() => {
+                    onClose();
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1"
+                    stroke="#ccc"
+                    className={styles.closeButtonIcon}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              {childWithProps}
+            </motion.div>
+          </motion.div>
+          )}
+        </AnimatePresence>
+      );
+    }
+    `
+    ,
+    CSS: `
+    .modalButton {
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+      background-color: #f1787e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .modalButton:hover {
+      background-color: #ef3740;
+    }
+    .modalButton:active {
+      transform: scale(0.9);
+    }
+    .modalWrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #7695b740;
+      backdrop-filter: blur(4px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    
+    .modalContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      width: 90%;
+      height: 90%;
+      padding: 2rem;
+      border-radius: 10px;
+      background-color: #ffffff;
+      z-index: 10000;
+    }
+    .modalCloseContainer {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+    .closeButton {
+      background-color: white;
+      border: none;
+      width: fit-content;
+      height: fit-content;
+    }
+    .closeButtonIcon {
+      width: 2rem;
+      height: 2rem;
+      display: inline;
+      vertical-align: middle;
+    }
+    @media (min-width: 1024px) {
+      .modalContent {
+        width: 60%;
+        height: 80%;
       }
     }
     `,
