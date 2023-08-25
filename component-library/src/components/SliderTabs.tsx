@@ -1,3 +1,4 @@
+"use client"
 import { ReactNode, useState } from "react";
 import styles from "./SliderTabs.module.css";
 import { motion } from "framer-motion";

@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 import styles from "./AccordionOne.module.css";
 
 export interface Props {
-  items: AccItem[];
+  items: AccItemOuter[];
+}
+export interface AccItemOuter {
+  title: string;
+  body: ReactNode;
 }
 export interface AccItem {
   title: string;

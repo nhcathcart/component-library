@@ -1,0 +1,39 @@
+.snippetContainer{
+  width: 100%;
+}
+.snippetTitle {
+  font-size: 25px;
+}
+.snippetDescription {
+  width: 100%;
+  margin-top: 2rem;
+}
+.snippetExample {
+  width: 100%;
+  margin-top: 2rem;
+}
+.snippetCodeblock {
+  width: 100%;
+  margin-top: 2rem;
+}
+.snippetButtonContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 2rem;
+}
+.snippetButton {
+  text-align: left;
+  font: inherit;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: inherit;
+}
+.snippetButton:hover {
+  background-color: #39537b;
+  color: white;
+}
+.snippetButton:active {
+  transform: scale(0.95);
+}
