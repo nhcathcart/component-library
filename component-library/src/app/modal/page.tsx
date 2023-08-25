@@ -1,11 +1,11 @@
 "use client"
+import { ReactSnippet } from "@/components/ReactSnippet"
 import ModalButton from "../../components/ModalButton"
+import { examples } from "@/examples/text"
 export default function ModalPage () {
     return (
         <>
-        <ModalButton isDefault={true} text={"click me"} >
-            <div>hello</div>
-        </ModalButton>
+        <ReactSnippet {...examples.modal}/>
         </>
     )
 }
